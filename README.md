@@ -39,8 +39,35 @@ The model is trained on 4 classes:
 
    > *Note: If you have a CUDA-capable GPU, install the CUDA version of PyTorch from [pytorch.org](https://pytorch.org/get-started/locally/) for faster training and inference.*
 
-3. **Download the Dataset**:
-   Download the KTH dataset and extract the `.avi` files into a `Dataset` folder in the root directory. Organize them into four subfolders: `walking`, `running`, `handwaving`, and `handclapping` as shown in the project structure above.
+3. **Download the Dataset (Not included in repo)**:
+   > ⚠️ **Note:** Video datasets are extremely large. To keep the repository lightweight, the KTH dataset is intentionally excluded (ignored in `.gitignore`). **You must download it yourself.**
+
+   Since downloading directly from the browser sometimes fails, use the following commands in your terminal/command prompt to download and extract the dataset automatically:
+
+   ```bash
+   # Create folders
+   mkdir Dataset
+   cd Dataset
+   mkdir walking running handwaving handclapping
+
+   # Download zip files
+   curl -L -o walking.zip https://www.csc.kth.se/cvap/actions/walking.zip
+   curl -L -o running.zip https://www.csc.kth.se/cvap/actions/running.zip
+   curl -L -o handwaving.zip https://www.csc.kth.se/cvap/actions/handwaving.zip
+   curl -L -o handclapping.zip https://www.csc.kth.se/cvap/actions/handclapping.zip
+
+   # Extract files into their respective folders
+   tar -xf walking.zip -C walking
+   tar -xf running.zip -C running
+   tar -xf handwaving.zip -C handwaving
+   tar -xf handclapping.zip -C handclapping
+
+   # Clean up the zip files
+   del walking.zip running.zip handwaving.zip handclapping.zip  # On Windows
+   # rm *.zip                                                   # On Linux/Mac
+   
+   cd ..
+   ```
 
 ## 🚀 Usage
 
