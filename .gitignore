@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+venv/
+env/
+.env
+.venv/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+.idea/
+
+# Large Files (Weights and Datasets)
+# Do not commit the KTH video dataset or trained models to version control
+Dataset/
+*.pth
+*.pt
+*.ckpt
+*.onnx
+
+# System Files
+.DS_Store
+Thumbs.db
